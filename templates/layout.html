@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+  </head>
+  <body>
+    <header class="bg-green-900 shadow-sm shadow-gray-600 text-white">
+      <div class="container mx-auto px-2 sm:px-0">
+        <div class="w-full flex justify-between items-center">
+          <div class="text-center">
+            <h1 class="uppercase text-xl font-bold">eventicity</h1>
+          </div>
+
+          {% comment %} open mobile menu button {% endcomment %}
+          <div class="md:hidden items-center flex py-3">
+            <button
+              class="ring-1 p-1 ring-white rounded-md"
+              id="menuOpenButton"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+                />
+              </svg>
+            </button>
+          </div>
+          {% comment %} menu items {% endcomment %}
+          <div class="py-3 hidden md:flex">
+            <ul class="flex items-center gap-5">
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {% comment %} mobile menu items {% endcomment %}
+        <div class="py-3 hidden md:hidden" id="menuItems">
+          <ul class="flex flex-col items-center gap-5">
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >Blogs</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                class="text-md font-normal uppercase text-gray-200 hover:text-white"
+                >Dashboard</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    {% comment %} main content {% endcomment %}
+    <main>{% block content %}{% endblock content %}</main>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
