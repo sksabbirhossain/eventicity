@@ -1,5 +1,259 @@
 {% extends "layout.html" %} {% block title %} events page {% endblock title %}
+{% block content %} {% comment %} hero section {% endcomment %}
+<section class="bg-green-100">
+  <div class="container mx-auto">
+    <div class="w-full h-[50vh] flex justify-center items-center px-2 sm:px-0">
+      <div class="space-y-2 text-center">
+        <h1 class="sm:text-4xl text-3xl capitalize josefin-sans-c">
+          Welcome to Eventicity
+        </h1>
+        <div>
+          <p class="font-normal">
+            From intimate gatherings to grand celebrations, we make it simple.
+          </p>
+          <p class="font-normal">Plan your next event with ease—start today!</p>
+        </div>
+        <button
+          class="bg-green-400 hover:bg-green-500 text-gray-800 hover:text-gray-900 transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold"
+        >
+          Start Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% block content %}
-    <h1>this is home page</h1>
+{% comment %} search section {% endcomment %}
+<section class="bg-green-300">
+  <div class="container mx-auto">
+    <div
+      class="w-full py-5 min-h-[20vh] gap-5 grid grid-cols-1 md:grid-cols-2 items-center px-2 sm:px-0"
+    >
+      <h2
+        class="sm:text-4xl md:text-start text-center text-3xl capitalize josefin-sans-c"
+      >
+        Event Search
+      </h2>
+      <div
+        class="flex gap-5 w-full items-center justify-center flex-col md:flex-row"
+      >
+        <select id="cars" class="w-full py-2 rounded focus:outline-none px-2">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="vw">VW</option>
+          <option value="audi" selected>Audi</option>
+        </select>
+
+        <input
+          type="text"
+          name=""
+          id=""
+          class="w-full py-2 rounded focus:outline-none px-2"
+        />
+        <button
+          class="bg-green-400 hover:bg-green-500 text-gray-800 hover:text-gray-900 transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold text-nowrap"
+        >
+          Search event now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} list of events {% endcomment %}
+<section class="container mx-auto py-10">
+  <div class="gap-5 grid grid-cols-1 md:grid-cols-2 px-2 sm:px-0">
+    {% comment %} event card {% endcomment %}
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="sm:flex gap-5 bg-green-200 rounded">
+        <div class="w-full">
+          <img
+            src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+            alt=""
+            class="object-cover w-full h-full rounded"
+          />
+        </div>
+        <div class="space-y-2 py-3 pl-1">
+          <p class="font-semibold uppercase">category: Food</p>
+          <h1 class="text-lg font-bold capitalize">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+            praesentium?
+          </h1>
+          <p class="text-gray-800 font-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            eligendi amet officiis iste sunt rem ducimus libero. Vitae porro
+            possimus cumque ea asperiores, blanditiis quod fugit praesentium ut
+            alias nesciunt.
+          </p>
+          <div>
+            <p class="font-bold uppercase">120 participants</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
 {% endblock content %}
