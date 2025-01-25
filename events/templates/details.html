@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block title %} event details {% endblock title %}
+{% block content %} {% comment %} hero section {% endcomment %}
+<section class="container mx-auto px-2 sm:px-0 pt-10 pb-10  max-w-5xl">
+  <div class="w-full">
+    {% for event in events %}
+    <div class="space-y-3">
+      <p class="font-bold">Category: {{event.category}}</p>
+      <p class="font-bold text-2xl">{{event.name}}</p>
+
+      <div class="w-full h-[450px]">
+        <img
+          src="https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg"
+          alt=""
+          class="object-cover w-full h-full rounded"
+        />
+      </div>
+
+      <p>{{event.description}}</p>
+
+      <div class="flex gap-5">
+        <p>Date: {{event.date }},</p>
+        <p>Time: {{event.time }}</p>
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-xl">List of participants</p>
+        {% for participent in event.participants.all %}
+        <p class="flex items-center gap-2 text-base capitalize font-medium">
+          <span class="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+          {{participent.name }}
+        </p>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

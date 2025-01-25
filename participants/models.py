@@ -8,3 +8,6 @@ class Participant(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     events = models.ManyToManyField(Event,related_name="participants")
+
+    def __str__(self):
+        return self.name
