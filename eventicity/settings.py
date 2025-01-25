@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'events',
     'categories',
-    'participants'
+    'participants',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
