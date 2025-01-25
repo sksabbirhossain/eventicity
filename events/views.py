@@ -2,5 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def home(request):
-    return render(request, "home/index.html")
+def events(request):
+    return render(request, "events/index.html")
+
+
+# add event
+def addEvent(request):
+    return render(request,"add-event/index.html")
