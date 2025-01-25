@@ -17,12 +17,14 @@ def dashboard(request):
     
     type = request.GET.get('type', 'events')
 
+    baseQuery = Event.objects.select_related('category')
+
     if type == 'events':
-        events = Event.objects.select_related('category').prefetch_related('events').all()
+        events = baseQuery.all()
     elif type == 'upcoming':
-        events = Event.objects.select_related('category').prefetch_related('upcoming').filter(date__gt=now().date())
+        events = baseQuery.filter(date__gt=now().date())
     elif type == 'past':
-        events = Event.objects.select_related('category').prefetch_related('past').filter(date__lt=now().date())
+        events = baseQuery.filter(date__lt=now().date())
 
 
     context = {

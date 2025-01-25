@@ -6,3 +6,5 @@ class ParticipantForm(forms.ModelForm):
     class Meta:
         model = Participant
         fields = ['name', 'email', "events"]
+
+    

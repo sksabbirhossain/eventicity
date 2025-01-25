@@ -3,3 +3,24 @@
 .josefin-sans-c {
   font-family: "Josefin Sans", serif;
 }
+
+input,
+textarea,
+select {
+  width: 100%;
+  display: block;
+  padding: 6px 5px;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+label {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+input,
+textarea,
+select:focus {
+  outline-color: green;
+}
