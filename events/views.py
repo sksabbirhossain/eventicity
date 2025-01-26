@@ -2,11 +2,35 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import EventForm 
 from .models import Event
+from categories.models import Category
+from django.db.models import Count,Q
+from django.utils.timezone import now
 
 # Create your views here.
 def events(request):
-    events = Event.objects.select_related('category').prefetch_related('participants').all()
-    return render(request, "events/index.html", {"events": events})
+    
+    categories = Category.objects.all()
+
+    category = request.GET.get('category')
+    start = request.GET.get('start')
+    end = request.GET.get('start')
+    
+    baseQuery = Event.objects.select_related('category').prefetch_related('participants')
+
+    if category and start and end :
+        events = baseQuery.filter(
+            Q(category__id=category) &  
+            Q(date__gte=start) &      
+            Q(date__lte=end) ).all()
+    else:
+        events = baseQuery.all()
+    
+
+    context ={
+        "events":events,
+        "categories": categories
+    }
+    return render(request, "events/index.html", context)
 
 
 def detailsEvent(request, id):

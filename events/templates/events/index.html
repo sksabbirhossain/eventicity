@@ -34,27 +34,51 @@
       >
         Event Search
       </h2>
-      <div
-        class="flex gap-5 w-full items-center justify-center flex-col md:flex-row"
-      >
-        <select id="cars" class="w-full py-2 rounded focus:outline-none px-2">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="vw">VW</option>
-          <option value="audi" selected>Audi</option>
-        </select>
+      <div class="flex gap-5 w-full items-center justify-center">
+        <form action="" class="flex flex-col md:flex-row gap-5 items-center">
+          <div class="">
+            <label for="" class="text-nowrap">Select Category</label>
+            <select
+              id="cars"
+              class="w-full py-2 rounded focus:outline-none px-2"
+              name="category"
+              required
+            >
+              <option value="">select category</option>
+              {% for category in categories %}
+              <option value="{{category.id}}"> {{category.name}} </option>
+              {% endfor %}
+            </select>
+          </div>
 
-        <input
-          type="text"
-          name=""
-          id=""
-          class="w-full py-2 rounded focus:outline-none px-2"
-        />
-        <button
-          class="bg-green-600 hover:bg-green-700 text-white transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold text-nowrap"
-        >
-          Search event now
-        </button>
+          <div class="">
+            <label for="">Start Date</label>
+            <input
+              type="date"
+              name="start"
+              id=""
+              class="w-full py-2 rounded focus:outline-none px-2"
+              required
+            />
+          </div>
+          <div class="">
+            <label for="">End Date</label>
+            <input
+              type="date"
+              name="end"
+              id=""
+              class="w-full py-2 rounded focus:outline-none px-2"
+              required
+            />
+          </div>
+          <div class="mt-6">
+            <button
+              class="bg-green-600 hover:bg-green-700 text-white transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold text-nowrap"
+            >
+              Filter
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

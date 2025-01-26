@@ -15,11 +15,13 @@ def dashboard(request):
         past=Count('id', filter=Q(date__lt=now().date()))
         )
     
-    type = request.GET.get('type', 'events')
+    type = request.GET.get('type', 'today')
 
     baseQuery = Event.objects.select_related('category')
 
-    if type == 'events':
+    if type == 'today':
+        events = baseQuery.filter(date=now().date()).all()
+    elif type == 'events':
         events = baseQuery.all()
     elif type == 'upcoming':
         events = baseQuery.filter(date__gt=now().date())
