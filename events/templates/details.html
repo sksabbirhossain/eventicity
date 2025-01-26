@@ -1,6 +1,6 @@
 {% extends "layout.html" %} {% block title %} event details {% endblock title %}
 {% block content %} {% comment %} hero section {% endcomment %}
-<section class="container mx-auto px-2 sm:px-0 pt-10 pb-10  max-w-5xl">
+<section class="container mx-auto px-2 sm:px-0 pt-10 pb-10 max-w-5xl">
   <div class="w-full">
     {% for event in events %}
     <div class="space-y-3">
@@ -18,8 +18,9 @@
       <p>{{event.description}}</p>
 
       <div class="flex gap-5">
-        <p>Date: {{event.date }},</p>
-        <p>Time: {{event.time }}</p>
+        <p class="bg-green-300 p-5 rounded font-bold">Date: {{event.date }},</p>
+        <p class="bg-green-300 p-5 rounded font-bold">Time: {{event.time }}</p>
+        <p class="bg-green-300 p-5 rounded font-bold">Location: {{event.location}}</p>
       </div>
 
       <div class="space-y-2">
