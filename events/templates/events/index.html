@@ -37,45 +37,28 @@
       <div class="flex gap-5 w-full items-center justify-center">
         <form action="" class="flex flex-col md:flex-row gap-5 items-center">
           <div class="">
-            <label for="" class="text-nowrap">Select Category</label>
-            <select
-              id="cars"
-              class="w-full py-2 rounded focus:outline-none px-2"
-              name="category"
-              required
-            >
-              <option value="">select category</option>
-              {% for category in categories %}
-              <option value="{{category.id}}"> {{category.name}} </option>
-              {% endfor %}
-            </select>
-          </div>
-
-          <div class="">
-            <label for="">Start Date</label>
+            <label for="">Event Name</label>
             <input
-              type="date"
-              name="start"
+              type="text"
+              name="name"
               id=""
               class="w-full py-2 rounded focus:outline-none px-2"
-              required
             />
           </div>
           <div class="">
-            <label for="">End Date</label>
+            <label for="">Event Location</label>
             <input
-              type="date"
-              name="end"
+              type="text"
+              name="location"
               id=""
               class="w-full py-2 rounded focus:outline-none px-2"
-              required
             />
           </div>
           <div class="mt-6">
             <button
-              class="bg-green-600 hover:bg-green-700 text-white transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold text-nowrap"
+              class="bg-green-600 hover:bg-green-700 text-white transition-all ease-in-out duration-200 px-6 py-2 rounded font-semibold capitalize text-nowrap"
             >
-              Filter
+              Search event now
             </button>
           </div>
         </form>

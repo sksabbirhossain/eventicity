@@ -8,27 +8,21 @@ from django.utils.timezone import now
 
 # Create your views here.
 def events(request):
-    
-    categories = Category.objects.all()
-
-    category = request.GET.get('category')
-    start = request.GET.get('start')
-    end = request.GET.get('start')
+    name = request.GET.get('name')
+    location = request.GET.get('location')
     
     baseQuery = Event.objects.select_related('category').prefetch_related('participants')
 
-    if category and start and end :
+    if name or location:
         events = baseQuery.filter(
-            Q(category__id=category) &  
-            Q(date__gte=start) &      
-            Q(date__lte=end) ).all()
+            Q( name=name) |  
+            Q(location=location) )
     else:
         events = baseQuery.all()
     
 
     context ={
-        "events":events,
-        "categories": categories
+        "events":events
     }
     return render(request, "events/index.html", context)
 
